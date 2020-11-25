@@ -12,6 +12,11 @@ namespace lab5.ViewModels
         TypeOfGsmDesc,
         TTkofTypeAsc,
         TTkofTypeDesc,
+        //Containers
+        NumberAsc,
+        NumberDesc,
+        TankCapacityAsc,
+        TankCapacityDesc,
         //Staff
         FullNameAsc,
         FullNameDesc,
@@ -30,6 +35,7 @@ namespace lab5.ViewModels
         DateAndTimeOfTheOperationIncomeOrExpenseDesc,
         ResponsibleForTheOperationAsc,
         ResponsibleForTheOperationDesc
+
     }
 
     public class SortViewModel
@@ -37,6 +43,10 @@ namespace lab5.ViewModels
         //GSM
         public SortState TypeOfGsmSort { get; set; }
         public SortState TTkofTypeSort { get; set; }
+
+        //Containers
+        public SortState NumberSort { get; set; }
+        public SortState TankCapacitySort { get; set; }
 
         //Staff
         public SortState FullNameSort { get; set; }
@@ -58,12 +68,13 @@ namespace lab5.ViewModels
             //Gsm
             TypeOfGsmSort = state == SortState.TypeOfGsmAsc ? SortState.TypeOfGsmDesc : SortState.TypeOfGsmAsc;
             TTkofTypeSort = state == SortState.TTkofTypeAsc ? SortState.TTkofTypeDesc : SortState.TTkofTypeAsc;
-            //Shows
+            //Staff
             FullNameSort = state == SortState.FullNameAsc ? SortState.FullNameDesc : SortState.FullNameAsc;
             StaffAgeSort = state == SortState.StaffAgeAsc ? SortState.StaffAgeDesc : SortState.StaffAgeAsc;
             StaffFunctionSort = state == SortState.StaffFunctionAsc ? SortState.StaffFunctionDesc : SortState.StaffFunctionAsc;
             WorkingHoursForAweekSort = state == SortState.WorkingHoursForAweekAsc ? SortState.WorkingHoursForAweekDesc : SortState.WorkingHoursForAweekAsc;
-
+            //Containers
+            NumberSort = state == SortState.NumberAsc ? SortState.NumberDesc : SortState.NumberAsc;
             //IncomeAndExpensesOfGsm
             NumberOfCapacitySort = state == SortState.NumberOfCapacityAsc ? SortState.NumberOfCapacityDesc : SortState.NumberOfCapacityAsc;
             IncomeOrExpensePerliterSort = state == SortState.IncomeOrExpensePerliterAsc ? SortState.IncomeOrExpensePerliterDesc : SortState.IncomeOrExpensePerliterAsc;

@@ -19,5 +19,6 @@ namespace lab5.ViewModels
 
         [Display(Name = "ResponsibleForTheOperation")]
         public string ResponsibleForTheOperation { get; set; }
+        public string StaffName { get; set; }
     }
 }

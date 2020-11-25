@@ -23,7 +23,10 @@
                 <input type="date" name="DateAndTimeOfTheOperationIncomeOrExpense" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.DateAndTimeOfTheOperationIncomeOrExpense" />
 
                 <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation"></label>
-                <input  name="ResponsibleForTheOperation" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation" />
+                <input name="ResponsibleForTheOperation" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation" />
+
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.StaffName"></label>
+                <input name="StaffName" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.StaffName" />
 
                 <input type="submit" value="Filter" class="btn btn-primary" />
             </form>
@@ -50,6 +53,16 @@
             <td>
                 <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.ResponsibleForTheOperationSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
                     Responsible For The Operation
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.FullNameSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Container Number
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.NumberSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Staff Name
                 </a>
             </td>
 
