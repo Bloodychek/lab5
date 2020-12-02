@@ -18,6 +18,6 @@ namespace lab5.ViewModels
         public string StaffFunction { get; set; }
 
         [Display(Name = "WorkingHoursForAweek")]
-        public DateTime WorkingHoursForAweek { get; set; }
+        public int WorkingHoursForAweek { get; set; }
     }
 }

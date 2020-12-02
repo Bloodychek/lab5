@@ -130,9 +130,7 @@ namespace lab5
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.WorkingHoursForAweek)
-                    .HasColumnName("workingHoursForAWeek")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.WorkingHoursForAweek).HasColumnName("workingHoursForAWeek");
             });
 
             OnModelCreatingPartial(modelBuilder);

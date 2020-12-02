@@ -14,7 +14,7 @@ namespace lab5.Models
         public string FullName { get; set; }
         public int? StaffAge { get; set; }
         public string StaffFunction { get; set; }
-        public DateTime WorkingHoursForAweek { get; set; }
+        public int WorkingHoursForAweek { get; set; }
 
         public virtual ICollection<IncomeAndExpensesOfGsm> IncomeAndExpensesOfGsm { get; set; }
     }

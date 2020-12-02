@@ -29,7 +29,7 @@ namespace lab5.Controllers
             StaffFilterViewModel filter = HttpContext.Session.Get<StaffFilterViewModel>(filterKey);
             if (filter == null)
             {
-                filter = new StaffFilterViewModel { FullName = string.Empty, StaffAge = 0, StaffFunction = string.Empty, WorkingHoursForAweek = default };
+                filter = new StaffFilterViewModel { FullName = string.Empty, StaffAge = 0, StaffFunction = string.Empty, WorkingHoursForAweek = 0 };
                 HttpContext.Session.Set(filterKey, filter);
             }
 
@@ -173,7 +173,7 @@ namespace lab5.Controllers
             return View(StaffViewModel);
         }
 
-        private IQueryable<Staff> GetSortedEntities(SortState sortState, string fullName, int staffAge, string staffFunction, DateTime workingHoursForAweek)
+        private IQueryable<Staff> GetSortedEntities(SortState sortState, string fullName, int staffAge, string staffFunction, int workingHoursForAweek)
         {
             IQueryable<Staff> staff = context.Staff.AsQueryable();
 
@@ -211,8 +211,8 @@ namespace lab5.Controllers
                 staff = staff.Where(g => g.StaffAge == staffAge).AsQueryable();
             if (!string.IsNullOrEmpty(staffFunction))
                 staff = staff.Where(g => g.StaffFunction.Contains(staffFunction)).AsQueryable();
-            if (workingHoursForAweek != default)
-                staff = staff.Where(g => g.WorkingHoursForAweek.Date == workingHoursForAweek.Date).AsQueryable();
+            if (workingHoursForAweek != 0)
+                staff = staff.Where(g => g.WorkingHoursForAweek == workingHoursForAweek).AsQueryable();
 
             return staff;
         }
